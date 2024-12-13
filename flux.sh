@@ -6,7 +6,7 @@
 
 # Packages are installed after nodes so we can fix them...
 
-DEFAULT_WORKFLOW="https://raw.githubusercontent.com/ai-dock/comfyui/main/config/workflows/flux-comfyui-example.json"
+DEFAULT_WORKFLOW=""
 
 APT_PACKAGES=(
     #"package-1"
@@ -37,22 +37,19 @@ VAE_MODELS=(
 )
 
 LORA_MODELS=(
-    "https://huggingface.co/XLabs-AI/flux-RealismLora/resolve/main/lora.safetensors"
-    "https://huggingface.co/DeepalteredL/CSTB/resolve/main/CSTB.safetensors"
-    "https://huggingface.co/DeepalteredL/CSTA/resolve/main/CSTA.safetensors"
-    "https://huggingface.co/DeepalteredL/AGT/resolve/main/AGT.safetensors"
-    "https://huggingface.co/DeepalteredL/IYT/resolve/main/IYT.safetensors"
-    "https://huggingface.co/DeepalteredL/CAJTA/resolve/main/CAJTA.safetensors"
-    "https://huggingface.co/DeepalteredL/SBTB/resolve/main/SBTB.safetensors"
-    "https://huggingface.co/DeepalteredL/SBTA/resolve/main/SBTA.safetensors"
-    "https://huggingface.co/DeepalteredL/SFDTA/resolve/main/SFDTA.safetensors"
-    "https://huggingface.co/DeepalteredL/STY0/resolve/main/STY0.safetensors"
+"https://huggingface.co/XLabs-AI/flux-RealismLora/resolve/main/lora.safetensors"
+"https://huggingface.co/DeepalteredL/CSTB/resolve/main/CSTB.safetensors"
+"https://huggingface.co/DeepalteredL/CSTA/resolve/main/CSTA.safetensors"
+"https://huggingface.co/DeepalteredL/AGT/resolve/main/AGT.safetensors"
+"https://huggingface.co/DeepalteredL/IYT/resolve/main/IYT.safetensors"
+"https://huggingface.co/DeepalteredL/CAJTA/resolve/main/CAJTA.safetensors"
+"https://huggingface.co/DeepalteredL/SBTB/resolve/main/SBTB.safetensors"
+"https://huggingface.co/DeepalteredL/SBTA/resolve/main/SBTA.safetensors"
+"https://huggingface.co/DeepalteredL/SFDTA/resolve/main/SFDTA.safetensors"
+"https://huggingface.co/DeepalteredL/STY0/resolve/main/STY0.safetensors"
 )
 
 ESRGAN_MODELS=(
-    "https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x4.pth"
-    "https://huggingface.co/FacehugmanIII/4x_foolhardy_Remacri/resolve/main/4x_foolhardy_Remacri.pth"
-    "https://huggingface.co/Akumetsu971/SD_Anime_Futuristic_Armor/resolve/main/4x_NMKD-Siax_200k.pth"
 )
 
 CONTROLNET_MODELS=(
