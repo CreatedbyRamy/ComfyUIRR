@@ -37,6 +37,16 @@ VAE_MODELS=(
 )
 
 LORA_MODELS=(
+    "https://huggingface.co/XLabs-AI/flux-RealismLora/resolve/main/lora.safetensors"
+    "https://huggingface.co/DeepalteredL/CSTB/resolve/main/CSTB.safetensors"
+    "https://huggingface.co/DeepalteredL/CSTA/resolve/main/CSTA.safetensors"
+    "https://huggingface.co/DeepalteredL/AGT/resolve/main/AGT.safetensors"
+    "https://huggingface.co/DeepalteredL/IYT/resolve/main/IYT.safetensors"
+    "https://huggingface.co/DeepalteredL/CAJTA/resolve/main/CAJTA.safetensors"
+    "https://huggingface.co/DeepalteredL/SBTB/resolve/main/SBTB.safetensors"
+    "https://huggingface.co/DeepalteredL/SBTA/resolve/main/SBTA.safetensors"
+    "https://huggingface.co/DeepalteredL/SFDTA/resolve/main/SFDTA.safetensors"
+    "https://huggingface.co/DeepalteredL/STY0/resolve/main/STY0.safetensors"
 )
 
 ESRGAN_MODELS=(
@@ -59,12 +69,11 @@ function provisioning_start() {
 
     # Get licensed models if HF_TOKEN set & valid
     if provisioning_has_valid_hf_token; then
-        UNET_MODELS+=("https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/flux1-dev.safetensors")
+        UNET_MODELS+=("https://huggingface.co/city96/FLUX.1-dev-gguf/resolve/main/flux1-dev-F16.gguf")
         VAE_MODELS+=("https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/ae.safetensors")
     else
-        UNET_MODELS+=("https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/flux1-schnell.safetensors")
-        VAE_MODELS+=("https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors")
-        sed -i 's/flux1-dev\.safetensors/flux1-schnell.safetensors/g' /opt/ComfyUI/web/scripts/defaultGraph.js
+        UNET_MODELS+=("")
+        VAE_MODELS+=("")
     fi
 
     provisioning_print_header
