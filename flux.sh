@@ -55,6 +55,11 @@ ESRGAN_MODELS=(
 CONTROLNET_MODELS=(
 )
 
+# Adding the upscale model URL
+UPSCALE_MODELS=(
+    "https://github.com/Phhofm/models/releases/download/4xNomos8k_atd_jpg/4xNomos8k_atd_jpg.pth"
+)
+
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
 
 function provisioning_start() {
@@ -99,6 +104,9 @@ function provisioning_start() {
     provisioning_get_models \
         "${WORKSPACE}/storage/stable_diffusion/models/esrgan" \
         "${ESRGAN_MODELS[@]}"
+    provisioning_get_models \
+        "/storage/stable_diffusion/models/upscale_models" \
+        "${UPSCALE_MODELS[@]}"
     provisioning_print_end
 }
 
