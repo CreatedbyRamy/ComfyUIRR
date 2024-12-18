@@ -48,6 +48,8 @@ LORA_MODELS=(
 "https://huggingface.co/DeepalteredL/SFDTA/resolve/main/SFDTA.safetensors"
 "https://huggingface.co/DeepalteredL/STY0/resolve/main/STY0.safetensors"
 "https://huggingface.co/DeepalteredL/HTA/resolve/main/HTA.safetensors"
+"https://huggingface.co/DeepalteredL/MMTA/resolve/main/MMTA.safetensors"
+"https://huggingface.co/DeepalteredL/MMTB/resolve/main/MMTB.safetensors"
 )
 
 ESRGAN_MODELS=(
