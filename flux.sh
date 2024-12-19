@@ -109,7 +109,7 @@ function provisioning_start() {
         "${UPSCALE_MODELS[@]}"
     provisioning_print_end
 
-    send_push_notification "Provisioning completed successfully."
+    send_push_notification "ComfyUI instance is ready to use nigro!"
 }
 
 function pip_install() {
