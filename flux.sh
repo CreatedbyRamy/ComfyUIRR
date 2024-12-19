@@ -6,7 +6,7 @@
 
 # Packages are installed after nodes so we can fix them...
 
-DEFAULT_WORKFLOW="https://raw.githubusercontent.com/CreatedbyRamy/ComfyUIRR/refs/heads/main/Renaissance%20Rays%20-%20Image%20generation%202.json"
+DEFAULT_WORKFLOW="https://raw.githubusercontent.com/CreatedbyRamy/ComfyUIRR/refs/heads/main/Imag_gen.json"
 
 APT_PACKAGES=(
     #"package-1"
