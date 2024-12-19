@@ -47,9 +47,6 @@ LORA_MODELS=(
 "https://huggingface.co/DeepalteredL/SBTA/resolve/main/SBTA.safetensors"
 "https://huggingface.co/DeepalteredL/SFDTA/resolve/main/SFDTA.safetensors"
 "https://huggingface.co/DeepalteredL/STY0/resolve/main/STY0.safetensors"
-"https://huggingface.co/DeepalteredL/HTA/resolve/main/HTA.safetensors"
-"https://huggingface.co/DeepalteredL/MMTA/resolve/main/MMTA.safetensors"
-"https://huggingface.co/DeepalteredL/MMTB/resolve/main/MMTB.safetensors"
 )
 
 ESRGAN_MODELS=(
@@ -111,6 +108,8 @@ function provisioning_start() {
         "/storage/stable_diffusion/models/upscale_models" \
         "${UPSCALE_MODELS[@]}"
     provisioning_print_end
+
+    send_push_notification "Provisioning completed successfully."
 }
 
 function pip_install() {
@@ -236,6 +235,21 @@ function provisioning_download() {
     else
         wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1"
     fi
+}
+
+function send_push_notification() {
+    local message="$1"
+    local api_key="$PUSHBULLET_TOKEN"
+
+    if [[ -z $api_key ]]; then
+        echo "PUSHBULLET_TOKEN environment variable not set. Notification skipped."
+        return
+    fi
+
+    curl -s -u "$api_key:" \
+        -X POST https://api.pushbullet.com/v2/pushes \
+        --header "Content-Type: application/json" \
+        --data-binary "{\"type\":\"note\",\"title\":\"Provisioning\",\"body\":\"$message\"}" > /dev/null
 }
 
 provisioning_start
